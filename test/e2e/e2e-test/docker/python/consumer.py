@@ -23,6 +23,7 @@ from skywalking import agent, config
 if __name__ == '__main__':
     config.service_name = 'consumer'
     config.logging_level = 'DEBUG'
+    config.protocol = 'http'
     agent.start()
 
     import socketserver
