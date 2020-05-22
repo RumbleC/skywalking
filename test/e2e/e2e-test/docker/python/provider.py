@@ -32,10 +32,10 @@ if __name__ == '__main__':
     class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
         def do_POST(self):
+            time.sleep(1)
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
-            time.sleep(1)
             self.wfile.write('{"name": "whatever"}'.encode('ascii'))
 
     PORT = 9091
