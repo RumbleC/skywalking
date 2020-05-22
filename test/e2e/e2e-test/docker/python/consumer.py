@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 
+import time
+
 import urllib.parse
 from urllib import request
 
@@ -40,6 +42,7 @@ if __name__ == '__main__':
             req = request.Request('http://medium:9092/users')
             req.add_header('Content-Type', 'application/json; charset=utf-8')
             req.add_header('Content-Length', str(len(data)))
+            time.sleep(1)
             with request.urlopen(req, data):
                 self.wfile.write(data)
 
